@@ -1,22 +1,56 @@
 package org.example;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        String host = "localhost";
-        String port = "5432";
-        String user = "temp_login";
-        String pass = "123";
-        String database = "postgres";
-        PostgreSQLConnection psqlc = new PostgreSQLConnection(host, port, user, pass, database);
+        PostgreSQLConnection psqlc = (new MyConnection()).myCon();
+//      mission1
 
+//      ------------------------------------------------------------------------
 
-//        psqlc.update("USER", "last_name", "LAST N", "last_name", "newLastName");
-        psqlc.update("USER", "last_name", "yismah", "first_name", "orian");
+        List<Person> list = new ArrayList<Person>();
+        list = psqlc.load_data();
+//        for(int i = 0; i < list.size(); i++){
+//            System.out.println(list.get(i).outPut());
+//        }
+//        psqlc.select("USER", "*", "no condition");
 
-//        psqlc.insert("USER", "first_name, last_name", "orian", "yismahMoshe");
-        psqlc.select("USER", "*", "no condition");
+//        ----------------------------------------------------------------------
+
+//      mission2
+//        -----------------------------------------------------------------------
+//        psqlc.select("USER", "*", "no condition");
+//        list.get(0).updatePerson("last_name", "zeru");
+//        System.out.println(list.get(0).outPut());
+//        psqlc.select("USER", "*", "no condition");
+        //        ----------------------------------------------------------------
+
+//        mission3
+        /*
+        * Create new Item to the list
+        * Insert his properties
+        * Save him in the database
+        * return his ID
+        * */
+
+//        for(int i = 0; i < list.size(); i++){
+//            System.out.println(list.get(i).outPut());
+//        }
+//        psqlc.select("USER", "*", "no condition");
+//
+//        psqlc.insertPerson(list, "firstName", "lastName");
+//
+//        for(int i = 0; i < list.size(); i++){
+//            System.out.println(list.get(i).outPut());
+//        }
+//        psqlc.select("USER", "*", "no condition");
+
 
     }
+
+
+
 }
