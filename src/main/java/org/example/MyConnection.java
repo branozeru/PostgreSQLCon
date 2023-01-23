@@ -2,6 +2,8 @@ package org.example;
 
 public class MyConnection {
 
+
+
     private String host = "localhost";
     private String port = "5432";
     private String user = "temp_login";
